@@ -1,11 +1,36 @@
-import { Image, Nav,Wrapper } from "./navbar.styles";
-import logoFipp from "../../assets/images/logo-nova.png"
+import { Button, Image, List, ListItem, Nav, NavLink, Wrapper } from "./navbar.styles";
+import logoFipp from "../../assets/images/logo-fipp.png";
+import logoUnoeste from "../../assets/images/logo-unoeste.png";
+import { MobileNavbar } from "./mobile-navbar";
 
 export const Navbar = () => {
-    return(
+    const openLink = () => {
+        const url = "https://www.unoeste.br/";
+        window.open(url, '_blank');
+    };
+
+    return (
         <Wrapper>
             <Nav>
-                <Image src={logoFipp} alt="logo fipp"/>
+                <Image src={logoFipp} alt = "logo fipp"/>
+                <List>
+                    <ListItem>
+                        <NavLink to="/">Home</NavLink>
+                    </ListItem>
+
+                    <ListItem>
+                        <NavLink to="/corpo-docente">Corpo Docente</NavLink>
+                    </ListItem>
+
+                    <ListItem>
+                        <NavLink to="/contato">Contato</NavLink>
+                    </ListItem>
+                    
+                    <ListItem>
+                        <Button onClick={openLink}><Image src={logoUnoeste} alt="logo unoeste"/></Button>
+                    </ListItem>
+                </List>
+                <MobileNavbar />
             </Nav>
         </Wrapper>
     );

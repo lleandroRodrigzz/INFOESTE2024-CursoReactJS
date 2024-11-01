@@ -91,5 +91,3 @@ export const MobileNavLink = styled(Link)`
   font-size: 25px;
   font-weight: 600;
 `;
-
-
